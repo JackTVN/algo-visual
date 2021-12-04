@@ -1,0 +1,21 @@
+html:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+html::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  width: 0.5vw;
+  transition: width 1s ease-in-out;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20vw;
+}
+
+#app {
+  text-align: center;
+
+  color: #fefefe;
+}

@@ -1,0 +1,27 @@
+#pathfind_page {
+    text-align: center;
+  
+    color: #fefefe;
+  
+    h1 {
+      font-size: 1.6vmax;
+      font-weight: 300;
+      padding: 0vw 2vw 1.2vw 2vw;
+      border-style: solid;
+      border-color: #fafafa;
+      border-width: 0 0 0.1vw 0;
+    }
+
+    #pathfind_option {
+        display: grid;
+        padding: 0 10%;
+
+        .pf_option_map {
+            place-self: center;
+            width: 30%;
+        }
+
+        margin: 0;
+    }
+
+}

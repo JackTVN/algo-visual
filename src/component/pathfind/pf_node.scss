@@ -1,0 +1,199 @@
+@mixin scrollDefault() {
+    &:hover::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &::-webkit-scrollbar {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        width: 0.36vw;
+        transition: width 1s ease-in-out;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 20vw;
+    }
+}
+
+#pf_div_node_holder {
+    position: absolute;
+    float: left;
+    padding: 0;
+    margin: 0;
+
+    height: 44px;
+
+    #pf_node {
+        color:#fafafa;
+        text-anchor: middle;
+        font-family: inherit;
+        font-size: 0.8vw;
+    
+        user-select: none;
+    }
+}
+
+#pf_node_workspace {
+    overflow: hidden;
+    padding: 2vh 0 2vh 0;
+
+    grid-template-rows: 5vw auto;
+    margin: 0;
+
+    input[type=number] {
+        height: inherit;
+        border: solid #fafafac1 1px;
+        background-color: #ebdbdb07;
+        border-radius: 0.2vw;
+
+        max-height: 90%;
+
+        padding: 0 5% 0 5%;
+        font-weight: 200;
+        font-size: 0.6vw;
+        color: inherit;
+        font-family: inherit;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: background-color 0.2s cubic-bezier(.79,1.38,1,1.5);
+        
+        &:focus {
+            outline: none;
+            background-color: #ebdbdb2c;
+        }
+        
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    .tooltip {
+        user-select: no;
+        position: absolute !important;
+        visibility: hidden;
+    
+        width: 160%;
+        bottom: 100%;
+        left: 50% !important;
+        margin-left: -80%;
+    
+        font-size: 0.7vw !important;
+        font-weight: 300 !important;
+    
+        background-color: rgba(44, 43, 43, 0.95) !important;
+        color: #fff;
+        
+        text-align: center !important;
+        padding: 0.1vw 0 !important;
+        border-radius: 0.2vw !important;
+        
+        z-index: 1 !important;
+    }
+
+    button {
+        font: inherit;
+        background-color: #101010;
+        color: #fafafa;
+        border: solid #fafafac1 1px;
+        border-radius: 0.2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        max-height: 90%;
+        aspect-ratio: 1.5 / 1;
+    }
+
+    #pf_node_item {
+        display: grid;
+        grid-template-columns: 7% 7% 7% 7% 7% auto;
+        height: 5vmin;
+
+        margin: 1vh 0 1vh 0;
+        padding: 0.5vh 0 0.5vh 0.5vw;
+
+        align-items: center;
+
+        button {
+            position: relative;
+            height: inherit;
+            width: 5vw;
+    
+            font-weight: 300;
+            font-size: 1vw;
+
+            transition: background-color 0.3s cubic-bezier(.79,1.38,1,1.5);
+            &:hover .tooltip { visibility: visible; }
+        }
+    }
+
+    #pf_node_screen {
+        display: grid;
+        padding: 0.5vh 0.5vw;
+        grid-template-columns: 70% 30%;
+
+        height: 70vh;
+
+        #pf_node_map {
+            margin: 0 1vw 0 0;
+            border: solid #fafafa 1px;
+            border-radius: 0.2vw;
+
+            height: 100%;
+
+            position: relative;
+        }
+
+        #pf_node_info {
+            margin: 0 1vw 0 0;
+            border: solid #fafafa 1px;
+            border-radius: 0.2vw;
+
+            height: 100%;
+
+            #pf_node_player {
+                border: solid #fafafa 1px;
+                border-radius: 0.2vw;
+
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                text-align: center;
+                align-items: center;
+                padding: 0 1vw 0 1vw;
+                user-select: none;
+                max-height: 100%;
+
+                button {
+                    position: relative;
+                    height: inherit;
+                    height: 80%;
+                    width: 80%;
+
+                    font-size: 1vw;
+
+                    transition: background-color 0.1s cubic-bezier(.79,1.38,1,1.5);
+                    &:hover .tooltip { visibility: visible; }
+                }
+
+                input[type=number] {
+                    height: 80%;
+                    width: 80%;
+                    font-size: 1.2vw;
+                }
+
+                #pf_node_delay {
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
