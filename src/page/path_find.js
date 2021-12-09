@@ -30,7 +30,7 @@ function Pathfind_page() {
 
     return (
         <div id="pathfind_page">
-            <h1> Yoooooo this is the path find page      <a href="./.."> Go back </a> </h1>
+            <h1> Yoooooo this is the path find page      <a href="./#/"> Go back </a> </h1>
 
             <div id="pathfind_option">
                 <CSelect className='pf_option_map' option={['Maze', 'Nodes']} current={mapType} handleChange={setmapType} />

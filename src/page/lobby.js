@@ -9,7 +9,7 @@ function Lobby() {
 	<div id="lobby">
 		<h1> Yoooooo </h1>
 
-        <a href="./path_find"> Pathfind </a> 
+        <a href="./#/path-find"> Pathfind </a> 
 	</div>
 	);
 }

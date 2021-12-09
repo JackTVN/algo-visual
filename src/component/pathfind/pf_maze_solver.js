@@ -150,6 +150,8 @@ export function Astar_maze_onestep(maze) {
             (Math.sqrt(Math.pow(second.x - copy[1].end.x, 2) + Math.pow(second.y - copy[1].end.y, 2))) * 2 - second.w
     })
 
+    console.log(copy[1].Q);
+
     let tile = copy[1].Q.shift()
     while (copy[1].V[tile.y][tile.x]) {
         if (copy[1].Q.length === 0) {
@@ -200,11 +202,6 @@ export function Astar_maze_onestep(maze) {
             copy[1].P[RightT.y][RightT.x] = { y: tile.y, x: tile.x }
         }
     }
-
-    copy[1].Q.sort((first, second) => {
-        return (Math.sqrt(Math.pow(first.x - copy[1].end.x, 2) + Math.pow(first.y - copy[1].end.y, 2))) * 2 + first.w -
-            (Math.sqrt(Math.pow(second.x - copy[1].end.x, 2) + Math.pow(second.y - copy[1].end.y, 2))) * 2 - second.w
-    })
 
     return copy
 }

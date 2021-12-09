@@ -7,6 +7,7 @@
         background-color: rgba(255, 255, 255, 0.2);
         border-radius: 50px;
         width: 0.36vw;
+        height: 0.4vh;
         transition: width 1s ease-in-out;
     }
 
@@ -25,10 +26,22 @@
     height: 44px;
 
     #pf_node {
+        border-width: 0.1vw;
+        border-style: solid;
+        border-radius: 50%;
+
+        width: 44px;
+        height: 44px;
+
+        transition: background-color 0.2s cubic-bezier(.79,1.38,1,1.5);
+
+        display: grid;
+
+        place-items: center;
+
         color:#fafafa;
-        text-anchor: middle;
         font-family: inherit;
-        font-size: 0.8vw;
+        font-size: 80%;
     
         user-select: none;
     }
@@ -111,7 +124,7 @@
 
     #pf_node_item {
         display: grid;
-        grid-template-columns: 7% 7% 7% 7% 7% auto;
+        grid-template-columns: 7% 7% 7% 7% 7% 7% auto;
         height: 5vmin;
 
         margin: 1vh 0 1vh 0;
@@ -135,7 +148,7 @@
     #pf_node_screen {
         display: grid;
         padding: 0.5vh 0.5vw;
-        grid-template-columns: 70% 30%;
+        grid-template-columns: 65% 35%;
 
         height: 70vh;
 
@@ -149,15 +162,35 @@
             position: relative;
         }
 
+        #connection_weight {
+            input {
+                width: 24px;
+                height: 20px;
+                background-color: #101010;
+                border: none;
+                border-radius: 50%;
+
+                font-family: inherit;
+                font-size: 1vw;
+                text-align: center;
+            }
+        }
+
         #pf_node_info {
+            display: grid;
+            grid-template-rows: 10% 50% 40%;
+
             margin: 0 1vw 0 0;
             border: solid #fafafa 1px;
             border-radius: 0.2vw;
 
             height: 100%;
 
+            overflow-y: scroll;
+
+            @include scrollDefault();
+
             #pf_node_player {
-                border: solid #fafafa 1px;
                 border-radius: 0.2vw;
 
                 display: grid;
@@ -171,8 +204,8 @@
                 button {
                     position: relative;
                     height: inherit;
-                    height: 80%;
-                    width: 80%;
+                    height: 70%;
+                    width: 70%;
 
                     font-size: 1vw;
 
@@ -186,6 +219,10 @@
                     font-size: 1.2vw;
                 }
 
+                label {
+                    font-size: 1vw;
+                }
+
                 #pf_node_delay {
                     &::-webkit-inner-spin-button {
                         -webkit-appearance: none;
@@ -195,5 +232,152 @@
                 }
             }
         }
+
+        #pf_node_queue {
+            border: solid #fafafa 1px;
+            border-radius: 0.2vw;
+
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            font-size: 1vw;
+
+            height: 100%;
+            max-height: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+
+            @include scrollDefault();
+
+            #path_queue {
+                padding: 0.5vh 0 0.5vh 0;
+                border: solid #fafafa;
+                border-width: 0 0 1px 0;
+                border-radius: 0.4vw;
+    
+                margin: 0;
+    
+                font-weight: 200;
+                font-size: 0.8vw;
+    
+                width: 100%;
+                max-width: 100%;
+    
+                transition: background-color 0.2s cubic-bezier(.79,1.38,1,1.5);
+    
+                user-select: none;
+                &:hover {
+                    outline: none;
+                    background-color: #ebdbdb2c;
+                }
+            }
+        }
+
+        #pf_node_stateboard {
+            display: grid;
+            grid-template-rows: 14% 86%;
+            grid-template-columns: 35% 65%;
+
+            border: solid #fafafa 1px;
+            border-radius: 0.2vw;
+
+            margin: 0;
+            padding: 0;
+
+            font-size: 1vw;
+
+            height: 100%;
+            max-height: 100%;
+
+            #pf_node_state_copypaste {
+                place-items: center;
+
+                font-size: 0.64vw;
+                line-height: 0.7vw;
+
+                grid-column: 1 / span 2;
+                display: grid;
+                grid-template-columns: 35% 35% 30%;
+
+                #pf_node_copy_state, #pf_node_paste_state {
+                    aspect-ratio: 0;
+                    padding: 0;
+                    margin: 0;
+                    place-self: center;
+                    width: 95%;
+                    height: 90%;
+                    max-height: 90%;
+                }
+
+                #pf_node_paste_text {
+                    font-family: inherit;
+                    font-size: 0.64vw;
+                    padding: 0;
+                    margin: 0;
+                    height: 75%;
+                    max-height: 75%;
+                    width: 90%;
+                    max-width: 90%;
+                    font-size: 1.2vw;
+                }
+            }
+
+            #node_location_infoboard {
+                border: solid #fafafa;
+                border-width: 1px 1px 0 0;
+                border-radius: 0.2vw;
+
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                font-size: 1vw;
+
+                height: 100%;
+                max-height: 100%;
+                overflow-x: hidden;
+                overflow-y: scroll;
+
+                @include scrollDefault();
+
+                #node_location_info {
+                    padding: 0.5vh 0 0.5vh 1vw;
+                    border: solid #fafafa;
+                    border-width: 0 0 1px 0;
+                    border-radius: 0.1  vw;
+        
+                    margin: 0;
+        
+                    font-weight: 100;
+                    font-size: 0.64vw;
+                    text-align: left;
+        
+                    width: 100%;
+                    max-width: 100%;
+        
+                    transition: background-color 0.2s cubic-bezier(.79,1.38,1,1.5);
+        
+                    user-select: none;
+                    &:hover {
+                        outline: none;
+                        background-color: #ebdbdb2c;
+                    }
+                }
+            }
+
+            #node_connection_infoboard {
+                border: solid #fafafa;
+                border-width: 1px 0 0;
+                border-radius: 0.2vw;
+
+                overflow-x: scroll;
+                overflow-y: scroll;
+
+                @include scrollDefault();
+            }
+        }
+
+        
     }
 }

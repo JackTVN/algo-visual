@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
+// https://usehooks-ts.com/react-hook/use-interval
 export function useInterval(callback, delay) {
   const savedCallback = useRef();
 
