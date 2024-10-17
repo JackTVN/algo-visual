@@ -1,2 +1,2 @@
-AAAAAAAAAAAAAAAAAAAA
-https://jacktvn.github.io/algo-visual/ i d k
+Website that showcase how pathfinding algorithm work!
+https://jacktvn.github.io/algo-visual/
